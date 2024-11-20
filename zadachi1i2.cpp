@@ -2,7 +2,7 @@
 using namespace std;
 
 
-static void revString()
+static void revString() //функция за обърщане на string
 {
     string str = "It's lights out and away we go";
     for (int i = str.length() - 1; i >= 0; i--)
@@ -11,7 +11,7 @@ static void revString()
     }
     cout << endl;
 }
-static void isPalindrome() {
+static void isPalindrome() { //функция за проверка дали думата е палиндром
     string strP;
     cout << "Enter a string: ";
     cin >> strP;
@@ -25,7 +25,8 @@ static void isPalindrome() {
     }
     if (is_palindrome) {
         cout << "The string is a palindrome." << endl;
-    } else {
+    }
+    else {
         cout << "The string is not a palindrome." << endl;
     }
 }
@@ -33,22 +34,24 @@ static void isPalindrome() {
 
 int main()
 {
-   int choice = 0;
-   while (true) { 
-    cout << "Select a function by typing its number:\n 1. Reverse the string\n 2. Check if palindrome\n 3. Exit\n";
-    cin >> choice;     
-    if (choice == 1) {
-        revString();
+    int choice = 0;
+    while (true) { //предотвраява програмата от затваряне след избрана функция
+        cout << "Select a function by typing its number:\n 1. Reverse the string\n 2. Check if palindrome\n 3. Exit\n";
+        cin >> choice;
+        if (choice == 1) {
+            revString();
+        }
+        else if (choice == 2) {
+            isPalindrome();
+        }
+        else if (choice == 3) {
+            break;
+        }
+        else {
+            cout << "Invalid choice. Please try again." << endl;
+            continue;
+        }
     }
-    else if (choice == 2) {
-        isPalindrome();
-    }
-    else if (choice == 3) {
-        cout << "Invalid choice. Please try again." << endl;
-        continue;
-    }
-    break;
-   }
-   return 0;
-    
-   }
+    return 0;
+
+}
